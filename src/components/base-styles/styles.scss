@@ -1,0 +1,33 @@
+@import "./bourbon/bourbon";
+@import "./base/base";
+@import "mixins";
+
+$white         : #FFFFFF !default;
+$ghost         : #FAFAFA !default;
+$snow          : #F9F9F9 !default;
+$vapor         : #F6F6F6 !default;
+$white-smoke   : #F5F5F5 !default;
+$silver        : #EFEFEF !default;
+$smoke         : #EEEEEE !default;
+$gainsboro     : #DDDDDD !default;
+$iron          : #CCCCCC !default;
+$base          : #AAAAAA !default;
+$aluminum      : #999999 !default;
+$jumbo         : #888888 !default;
+$monsoon       : #777777 !default;
+$steel         : #666666 !default;
+$charcoal      : #555555 !default;
+$tuatara       : #444444 !default;
+$oil           : #333333 !default;
+$jet           : #222222 !default;
+$ebony         : #111111 !default;
+$black         : #000000 !default;
+
+
+$golden        : #F5A623;
+$green		   	 : #7ED321;
+$red           : #D0021B; 
+$aqua          : #7FDBFF;
+
+$base-spacing: 1.5em !default;
+

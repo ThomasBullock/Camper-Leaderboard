@@ -1,0 +1,5 @@
+@import './components/base-styles/styles.scss';
+
+body {
+  background: linear-gradient(to top, $aqua, transparentize($aqua, .9));
+}

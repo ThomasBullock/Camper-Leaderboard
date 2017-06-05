@@ -1,0 +1,30 @@
+@import './base-styles/styles.scss';
+
+
+.container {
+	width: 80%;
+	margin: 1em auto;
+}
+
+.table {
+
+	caption {
+		border: solid 1px $oil;
+		padding: $base-spacing;		
+	}
+
+	width: 100%;
+
+	tr {
+		display: flex;
+		justify-content: space-around;
+	}
+
+	th, td {
+		display: flex;
+		border: solid 1px $oil;
+		flex: 1 1 100%;
+
+		justify-content: space-around;		
+	}
+}
