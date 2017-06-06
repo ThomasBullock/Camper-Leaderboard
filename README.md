@@ -1,3 +1,10 @@
+# Free Code Camp Data Visualization Certification Project
+[Camper Leaderboard](https://www.freecodecamp.com/challenges/build-a-camper-leaderboard)
+
+Used these packages to get it done.
+[Axios](https://github.com/mzabriskie/axios) and 
+[react-imageloader](https://github.com/hzdg/react-imageloader)
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
