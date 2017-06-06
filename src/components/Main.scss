@@ -2,14 +2,35 @@
 
 
 .container {
-	width: 80%;
+	width: 100%;
 	margin: 1em auto;
-	padding-bottom: $base-spacing * 2;
+	padding-bottom: $base-spacing * 10;
+
+  @media screen and (min-width: 901px) {
+  	width: 80%;
+		padding-bottom: $base-spacing * 4;  	
+  }
+
+}
+
+.imageloader {
+		padding: 0;
+		margin: 0;
+		flex: 0 0 50px;
+		height: 50px;
+		align-self: flex-start;
+		margin-right: $base-spacing / 2;
+
+  @media screen and (min-width: 901px) {
+		flex: 0 0 60px;
+		height: 60px;  	
+  }
+
 }
 
 .table {
 	border-color: transparent;
-
+	word-wrap: normal;
 	thead {
 		background: transparentize($oil, .6);		
 
@@ -24,36 +45,47 @@
 	}
 
 	caption {
-		background: transparentize($oil, .2);
-		color: $smoke;
+		background: $oil;
 		border: solid 1px transparentize($oil, .5);
 		padding: $base-spacing;
 		border-top-left-radius: $base-border-radius;
 		border-top-right-radius: $base-border-radius;			
 
 		h1 {
-			margin: 0;
+			margin: 0;		
+			color: $green;
+			text-shadow: 0 1px 1px $black;
 		}
 	}
 
 	width: 100%;
 
 	td img {
-		width: 75px;
-		height: auto;
-		align-self: flex-start;
-		margin-right: $base-spacing;
-		border: solid 1px $oil;
+		border: solid 1px $tuatara;
 	}
 
 	tr {
 		// border-top: solid 1px transparentize($oil, .5);
 		display: flex;
 		justify-content: space-around;
+		transition: background .5s;
+
+
+	}
+
+	tbody {
+		tr {
+			&:hover {
+				background: $green;
+			}			
+		}
+
 	}
 
 	tr:nth-child(even) {
 		background: transparentize($oil, .9);
+
+
 	}
 
 	tr:last-child {
@@ -63,25 +95,32 @@
 
 	th, td {
 		display: flex;
-		width: 100%;
+		width: 99%;
 		text-align: center;
 		align-items: center;
 		border-right: solid 1px transparentize($oil, .5);
 		border-bottom: solid 1px transparentize($oil, .5);
-		flex: 1 1 27%;
+		flex: 1 1 28%;
 
 		justify-content: center;		
 	}
 
 	td:nth-child(2) {
-		justify-content: flex-start;
 		padding-top: 0;
-		padding-bottom: 0;			
+		padding-bottom: 0;
+
+		span {
+			flex: 1 1 80%;
+		}			
 	}
 
 	th:first-child, td:first-child {
-		flex: 1 1 19%;
+		flex: 1 1 5%;
 		border-left: solid 1px transparentize($oil, .5);
+
+	  @media screen and (min-width: 901px) {
+			flex: 1 1 18%;	  	
+	  }		
 	}
 
 	th:last-child, td:last-child {

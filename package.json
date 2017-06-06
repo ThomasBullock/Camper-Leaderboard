@@ -2,11 +2,13 @@
   "name": "leaderboard",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://thomasbullock.github.io/Camper-Leaderboard",
   "dependencies": {
     "axios": "^0.16.2",
     "classnames": "^2.2.5",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-imageloader": "^2.1.0"
   },
   "devDependencies": {
     "node-sass-chokidar": "0.0.2",

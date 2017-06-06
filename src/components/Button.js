@@ -14,7 +14,6 @@ class Button extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		console.log(this.props, nextProps)
 		if(this.props.active !== nextProps.active) {
 			this.setState({
 				active: nextProps.active
