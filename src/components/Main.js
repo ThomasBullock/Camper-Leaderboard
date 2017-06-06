@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './Main.css';
 
+import Button from './Button';
+
 
 
 class Main extends Component {
@@ -16,8 +18,9 @@ class Main extends Component {
     this.state = {
       mounted: false,
       leaderboard: null,
-      sortByName: false,
-      sortByNumber: false
+      recent: false,
+      alltime: false, 
+      sortByName: false
     }
   }
 
@@ -26,9 +29,10 @@ class Main extends Component {
     const self = this; 
     axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/recent')
       .then(function (response) {
-        console.log(response);
+        // console.log(response);
         self.setState({
           mounted: true,
+          recent: true,
           leaderboard: response.data
         })
       })
@@ -41,16 +45,20 @@ class Main extends Component {
     const self = this; 
     axios.get(`https://fcctop100.herokuapp.com/api/fccusers/top/${choice}`)
       .then(function (response) {
-        console.log(response);
+        // console.log(response);
+        const flip = (choice === 'recent') ? 'alltime' : 'recent';
+
         self.setState({
           leaderboard: response.data,
+          [choice]: true,
+          [flip]: false,
           sortByName: false,
           sortByNumber: false
         })
       })
       .catch(function (error) {
         console.log(error);
-    });    
+    });  
   }
 
   createLeaderboardList() {
@@ -69,8 +77,10 @@ class Main extends Component {
         if(nameA > nameB) {
           return 1;
         }        
-      } else if(this.state.sortByName) {
-        
+      } else if(this.state.recent) {
+        return (this.state.leaderboard[a].recent > this.state.leaderboard[b].recent) ? -1 : 1;
+      } else if(this.state.alltime) {
+        return (this.state.leaderboard[a].alltime > this.state.leaderboard[b].alltime) ? -1 : 1;
       } else {
         console.log('no sorting!')
         return 0;            
@@ -80,7 +90,7 @@ class Main extends Component {
       return(
       <tr key={key}>
         <td>{index + 1}</td>
-        <td>{this.state.leaderboard[key].username}</td>
+        <td className="table__user"><img src={this.state.leaderboard[key].img}/>{this.state.leaderboard[key].username}</td>
         <td>{this.state.leaderboard[key].recent}</td>
         <td>{this.state.leaderboard[key].alltime}</td>
       </tr>
@@ -90,14 +100,13 @@ class Main extends Component {
 
   sortDataByNumber() {
     this.setState({
-      sortByNumber: true,
-      sortByName: false
+      sortByName: false,
+      leaderboard: this.state.leaderboard.reverse()
     })
   }
 
   sortDataByName() {
-    this.setState({
-      sortByNumber: false,      
+    this.setState({    
       sortByName: true
     })
   }
@@ -111,13 +120,13 @@ class Main extends Component {
       <main >
         <div className="container">
             <table className="table">
-              <caption>Leaderboard</caption>
+              <caption><h1>Leaderboard</h1></caption>
               <thead>
                 <tr>
-                  <th><button onClick={this.sortDataByNumber}>#</button></th>
-                  <th><button onClick={this.sortDataByName}>Camper Name</button></th>
-                  <th><button onClick={() => this.getRemoteData('recent')}>Points in past 30 days</button></th> 
-                  <th><button onClick={() => this.getRemoteData('alltime')}>All time points</button></th>    
+                  <th>Leaderboard Position</th>
+                  <th><Button active={this.state.sortByName} clickFunc={this.sortDataByName} label="Sort by Name"></Button></th>
+                  <th><Button active={this.state.recent} label="Pts in past 30 days" clickFunc={() => this.getRemoteData('recent')}></Button></th> 
+                  <th><Button active={this.state.alltime} label="Pts All time" clickFunc={() => this.getRemoteData('alltime')}></Button></th>    
                 </tr>
               </thead>
               <tbody>

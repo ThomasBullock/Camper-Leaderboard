@@ -24,6 +24,10 @@
     color: #fff;
   }
 
+  &.active {
+    background-color: tint($action-color, 20%);    
+  }
+
   &:focus {
     outline: $focus-outline;
     outline-offset: $focus-outline-offset;

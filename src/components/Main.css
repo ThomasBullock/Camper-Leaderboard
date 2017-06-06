@@ -21,6 +21,8 @@ button, [type='button'], [type='reset'], [type='submit'] {
   button:hover, [type='button']:hover, [type='reset']:hover, [type='submit']:hover {
     background-color: #11519a;
     color: #fff; }
+  button.active, [type='button'].active, [type='reset'].active, [type='submit'].active {
+    background-color: #4484cd; }
   button:focus, [type='button']:focus, [type='reset']:focus, [type='submit']:focus {
     outline: 3px solid rgba(21, 101, 192, 0.6);
     outline-offset: 2px; }
@@ -200,18 +202,57 @@ hr {
 
 .container {
   width: 80%;
-  margin: 1em auto; }
+  margin: 1em auto;
+  padding-bottom: 3em; }
 
 .table {
+  border-color: transparent;
   width: 100%; }
+  .table thead {
+    background: rgba(51, 51, 51, 0.4); }
+    .table thead button {
+      box-shadow: 0 2px 1px #333333; }
+      .table thead button:active {
+        transform: translate(0px, 2px);
+        box-shadow: none; }
   .table caption {
-    border: solid 1px #333333;
-    padding: 1.5em; }
+    background: rgba(51, 51, 51, 0.8);
+    color: #EEEEEE;
+    border: solid 1px rgba(51, 51, 51, 0.5);
+    padding: 1.5em;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px; }
+    .table caption h1 {
+      margin: 0; }
+  .table td img {
+    width: 75px;
+    height: auto;
+    align-self: flex-start;
+    margin-right: 1.5em;
+    border: solid 1px #333333; }
   .table tr {
     display: flex;
     justify-content: space-around; }
+  .table tr:nth-child(even) {
+    background: rgba(51, 51, 51, 0.1); }
+  .table tr:last-child {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px; }
   .table th, .table td {
     display: flex;
-    border: solid 1px #333333;
-    flex: 1 1 100%;
-    justify-content: space-around; }
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    border-right: solid 1px rgba(51, 51, 51, 0.5);
+    border-bottom: solid 1px rgba(51, 51, 51, 0.5);
+    flex: 1 1 27%;
+    justify-content: center; }
+  .table td:nth-child(2) {
+    justify-content: flex-start;
+    padding-top: 0;
+    padding-bottom: 0; }
+  .table th:first-child, .table td:first-child {
+    flex: 1 1 19%;
+    border-left: solid 1px rgba(51, 51, 51, 0.5); }
+  .table th:last-child, .table td:last-child {
+    border-right: solid 1px rgba(51, 51, 51, 0.5); }

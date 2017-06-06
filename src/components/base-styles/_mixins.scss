@@ -1,3 +1,10 @@
+@mixin img-responsive() {
+	max-width: 100%;
+	height: auto;
+	display:block;
+}
+
+
 @mixin elem($element) {
 	
 	&__#{$element} {

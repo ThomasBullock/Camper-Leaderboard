@@ -21,6 +21,8 @@ button, [type='button'], [type='reset'], [type='submit'] {
   button:hover, [type='button']:hover, [type='reset']:hover, [type='submit']:hover {
     background-color: #11519a;
     color: #fff; }
+  button.active, [type='button'].active, [type='reset'].active, [type='submit'].active {
+    background-color: #4484cd; }
   button:focus, [type='button']:focus, [type='reset']:focus, [type='submit']:focus {
     outline: 3px solid rgba(21, 101, 192, 0.6);
     outline-offset: 2px; }
@@ -199,4 +201,7 @@ hr {
   margin: 1.5em 0; }
 
 body {
-  background: linear-gradient(to top, #7FDBFF, rgba(127, 219, 255, 0.1)); }
+  height: 100%;
+  background: linear-gradient(to top, #7FDBFF, rgba(127, 219, 255, 0.1));
+  background-repeat: no-repeat;
+  background-attachment: fixed; }

@@ -1,5 +1,8 @@
 @import './components/base-styles/styles.scss';
 
 body {
+	height: 100%;
   background: linear-gradient(to top, $aqua, transparentize($aqua, .9));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }

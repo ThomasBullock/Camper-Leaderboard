@@ -11,8 +11,8 @@ class Footer extends Component {
     <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="Logo"/>
   </div>
     <ul>
-      <li>See this project on <a href="https://github.com/ThomasBullock/Markdown-Previewer">Github</a></li>
-      <li>This web app uses <a href="https://github.com/chjj/marked">Marked</a></li>
+      <li>See this project on <a href="https://github.com/ThomasBullock/Camper-Leaderboard">Github</a></li>
+      <li>This web app uses <a href="https://www.npmjs.com/package/axios">Axios</a></li>
     </ul>
 
     <div className="footer-secondary-links">
